@@ -86,7 +86,7 @@ int main(int argc, char* argv[]){
         fs.read(&data[0], size);
     }
     
-	if(!UpdateResource(handle, RT_RCDATA, MAKEINTRESOURCE(_SM2EXE_CODE_ID), LANG_NEUTRAL, &data[0], data.size())){
+    if(!UpdateResource(handle, RT_RCDATA, MAKEINTRESOURCE(_SM2EXE_CODE_ID), LANG_NEUTRAL, &data[0], data.size())){
         std::cerr << "fatal error: cannot update resource in " << exe_temp << std::endl;
         return 1;
     }
