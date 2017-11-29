@@ -104,10 +104,10 @@ int main(int argc, char* argv[]){
         return 1;
     }
 
-	if(!EndUpdateResource(handle, FALSE)){
+    if(!EndUpdateResource(handle, FALSE)){
         std::cerr << "fatal error: cannot apply changes to " << exe_temp << std::endl;
         return 1;
-	}
+    }
 
     ::MoveFileA(exe_temp, exe_output);
     return 0;
