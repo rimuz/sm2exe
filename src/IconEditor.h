@@ -42,8 +42,8 @@ namespace sm2exe {
         bool push_icon(const char* icon);
         bool apply();
 
-        static constexpr unsigned WSize = sizeof(WORD), 
-                         BlockSize = sizeof(BYTE)*4 + WSize*2 + sizeof(DWORD)*2;
+        static constexpr unsigned   WSize = sizeof(WORD), 
+                                    BlockSize = sizeof(BYTE)*4 + WSize*2 + sizeof(DWORD)*2;
     };
 }
 
