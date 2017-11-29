@@ -39,8 +39,6 @@ namespace sm2exe {
     public:
         IconEditor(HGLOBAL handle, const char* bytecode);
         
-        bool failed_init();
-        bool failed_apply();
         bool push_icon(const char* icon);
         bool apply();
 
