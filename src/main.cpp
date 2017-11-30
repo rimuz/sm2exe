@@ -67,10 +67,14 @@ int main(int argc, char* argv[]){
         printUsage();
 
     // copy the PE file before
-    ::CopyFileA(exe_input, exe_temp, FALSE);
-    HGLOBAL handle = ::BeginUpdateResourceA(exe_temp, TRUE);
+    if(!::CopyFileA(exe_input, exe_temp, FALSE)){
+        std::cerr << "fatal error: cannot copy file " << exe_input << " to file " << exe_temp << std::endl;
+        return 1;
+    }
 
+    HGLOBAL handle = ::BeginUpdateResourceA(exe_temp, TRUE);
     std::string data;
+
     {
         std::ifstream fs(input_file, std::ios::binary);
         if(!fs){
@@ -111,7 +115,9 @@ int main(int argc, char* argv[]){
         return 1;
     }
 
-    ::MoveFileExA(exe_temp, exe_output, MOVEFILE_REPLACE_EXISTING);
+    if(!::MoveFileExA(exe_temp, exe_output, MOVEFILE_REPLACE_EXISTING)){
+        std::cerr << "fatal error: cannot move file " << exe_temp << " to file " << exe_output << std::endl;
+    }
     return 0;
 }
 
