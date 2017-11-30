@@ -91,17 +91,19 @@ int main(int argc, char* argv[]){
         return 1;
     }
 
-    sm2exe::IconEditor ie(handle, input_file);
-    for(auto* icon : icons){
-        if(!ie.push_icon(icon)){
-            std::cerr << "fatal error: cannot load correctly icon " << icon << std::endl;
+    if(!icons.empty()){
+        sm2exe::IconEditor ie(handle, input_file);
+        for(auto* icon : icons){
+            if(!ie.push_icon(icon)){
+                std::cerr << "fatal error: cannot load correctly icon " << icon << std::endl;
+                return 1;
+            }
+        }
+
+        if(!ie.apply()){
+            std::cerr << "fatal error: cannot create group icon resource!" << std::endl;
             return 1;
         }
-    }
-
-    if(!ie.apply()){
-        std::cerr << "fatal error: cannot create group icon resource!" << std::endl;
-        return 1;
     }
 
     if(!EndUpdateResource(handle, FALSE)){
@@ -109,7 +111,7 @@ int main(int argc, char* argv[]){
         return 1;
     }
 
-    ::MoveFileA(exe_temp, exe_output);
+    ::MoveFileExA(exe_temp, exe_output, MOVEFILE_REPLACE_EXISTING);
     return 0;
 }
 
