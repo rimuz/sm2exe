@@ -24,7 +24,7 @@
 #   error Sm2Exe must be compiled (or cross-compiled) for Windows only.
 #endif
 
-#define _SM2EXE_DEFAULT_INPUT "_latest-console.exe"
+#define _SM2EXE_DEFAULT_INPUT "latest-console.exe"
 #define _SM2EXE_DEFAULT_OUTPUT "smout.exe"
 #define _SM2EXE_DEFAULT_TEMP "_temp.exe" 
 #define _SM2EXE_PROGRAM_NAME "sm2exe"
