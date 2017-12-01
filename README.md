@@ -34,7 +34,7 @@ Where `DIST` is:
 - `latest-window.exe` for **32-bit GUI application**
 - `latest64-console.exe` for **64-bit console application**
 - `latest64-window.exe` for **64-bit GUI application**
-All the arguments except `myapp.smk` are optional. <br>
+All the arguments except `myapp.smk` are optional.
 
 The executable created in this case will be named `myapp.exe`, and will contain the icons specified. It is completely independent from the interpreter and can be obviously executed without it. <br>
 **`32-bit`** builds will need the dynamic libraries contained in folder **`libs32`** to run correctly, while **`64-bit`** those in the **`libs64`** one. You should take that into account when distributing your software.
