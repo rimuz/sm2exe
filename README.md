@@ -24,7 +24,7 @@ First, **compile** your program into an **SMK** file with the following command 
 smudge -c myapp.sm
 ```
 
-This will generate the file **`myapp.smk`**, which we can pack into an executable:
+Next, we generate the file **`myapp.smk`**, which we can pack into an executable:
 
 ```
 ./sm2exe -i DIST -I icon1.ico -I icon2.ico -o myapp.exe myapp.smk
