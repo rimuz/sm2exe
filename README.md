@@ -8,12 +8,12 @@ to the PE resources of a pre-built version of the **interpreter**.
 To make a long story short, Sm2Exe is able to generate a independent PE file (`.exe`) from any Smudge program.
 
 ### Building
-To build `sm2exe`, the procedure is the same as [Smudge](https://www.github.com/smudgelang/smudge).
+To build `sm2exe`, the procedure is the same as [Smudge](https://www.github.com/rimuz/smudge).
 To build a `Smudge Windows embedded` program just compile Smudge with option `-D_SM_WIN_EMBED`
 
 ### Usage
 To build an independent executable you'll need:
-- The **Smudge** interpreter (from [here](https://www.github.com/smudgelang/smudge))
+- The **Smudge** interpreter (from [here](https://www.github.com/rimuz/smudge))
 - A **`Smudge Windows embedded`** build, compatible with the interpreter version (generally the same)
 - An **`sm2exe`** build
 - A Smudge **program** (`.sm` files)
@@ -42,5 +42,5 @@ The executable created in this case will be named `myapp.exe`, and will contain 
 
 ### License
 
-As the main project [Smudge](https://www.github.com/smudgelang/smudge), Sm2Exe is licensed under the Apache License 2.0: look at the `LICENSE` file to read more. <br>
+As the main project [Smudge](https://www.github.com/rimuz/smudge), Sm2Exe is licensed under the Apache License 2.0: look at the `LICENSE` file to read more. <br>
 Copyright 2017 Riccardo Musso
